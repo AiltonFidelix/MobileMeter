@@ -1,0 +1,10 @@
+.qmake.stash
+.vscode
+.qtc_clangd
+.moc
+.obj
+.ui
+
+Makefile
+MobileMeter
+MobileMeter.pro.*
