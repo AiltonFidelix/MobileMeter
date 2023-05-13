@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MBMain</class>
+ <widget class="QMainWindow" name="MBMain">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>480</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MobileMeter</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: #B3E5FF;</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="1" column="0">
+     <widget class="QStackedWidget" name="stackedWidget">
+      <property name="currentIndex">
+       <number>2</number>
+      </property>
+      <widget class="QWidget" name="dashboard">
+       <layout class="QGridLayout" name="gridLayout_3">
+        <item row="0" column="1">
+         <layout class="QHBoxLayout" name="horizontalLayout_3">
+          <item>
+           <widget class="QLCDNumber" name="lcdNumber"/>
+          </item>
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout">
+            <property name="spacing">
+             <number>6</number>
+            </property>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_5">
+              <item>
+               <widget class="QLabel" name="label_4">
+                <property name="maximumSize">
+                 <size>
+                  <width>100</width>
+                  <height>16777215</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>Liters:</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QDoubleSpinBox" name="doubleSpinBox">
+                <property name="maximumSize">
+                 <size>
+                  <width>100</width>
+                  <height>16777215</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <kerning>true</kerning>
+                 </font>
+                </property>
+                <property name="acceptDrops">
+                 <bool>false</bool>
+                </property>
+                <property name="inputMethodHints">
+                 <set>Qt::ImhPreferNumbers</set>
+                </property>
+                <property name="frame">
+                 <bool>true</bool>
+                </property>
+                <property name="readOnly">
+                 <bool>false</bool>
+                </property>
+                <property name="accelerated">
+                 <bool>false</bool>
+                </property>
+                <property name="keyboardTracking">
+                 <bool>true</bool>
+                </property>
+                <property name="showGroupSeparator" stdset="0">
+                 <bool>false</bool>
+                </property>
+                <property name="maximum">
+                 <double>99999.990000000005239</double>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <widget class="QPushButton" name="pushButton_2">
+              <property name="maximumSize">
+               <size>
+                <width>200</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>Fuel</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="verticalSpacer">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="Settings">
+       <layout class="QGridLayout" name="gridLayout_4">
+        <item row="1" column="0">
+         <widget class="QToolBox" name="tbSettings">
+          <property name="currentIndex">
+           <number>2</number>
+          </property>
+          <widget class="QWidget" name="page">
+           <attribute name="label">
+            <string>Device</string>
+           </attribute>
+          </widget>
+          <widget class="QWidget" name="page1">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>764</width>
+             <height>252</height>
+            </rect>
+           </property>
+           <attribute name="label">
+            <string>Communication</string>
+           </attribute>
+           <layout class="QGridLayout" name="gridLayout_5">
+            <item row="0" column="1">
+             <widget class="QComboBox" name="comboBox">
+              <item>
+               <property name="text">
+                <string>Serial</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Wi-Fi</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Ethernet</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+            <item row="0" column="0">
+             <widget class="QLabel" name="label_5">
+              <property name="text">
+               <string>Use:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0" colspan="3">
+             <widget class="QStackedWidget" name="stackedWidget_2">
+              <widget class="QWidget" name="page_2"/>
+              <widget class="QWidget" name="page_3"/>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="page2">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>764</width>
+             <height>252</height>
+            </rect>
+           </property>
+           <attribute name="label">
+            <string>Slave Device</string>
+           </attribute>
+           <layout class="QGridLayout" name="gridLayout_6">
+            <item row="0" column="0">
+             <widget class="QGroupBox" name="groupBox">
+              <property name="title">
+               <string>Modbus RTU</string>
+              </property>
+              <layout class="QGridLayout" name="gridLayout_7">
+               <item row="0" column="0">
+                <layout class="QHBoxLayout" name="horizontalLayout_6">
+                 <item>
+                  <widget class="QLabel" name="label_8">
+                   <property name="text">
+                    <string>Port:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="lineEdit"/>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="label_7">
+                   <property name="text">
+                    <string>Baudrate:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QComboBox" name="comboBox_2">
+                   <item>
+                    <property name="text">
+                     <string>9600</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>115200</string>
+                    </property>
+                   </item>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="label_6">
+                   <property name="text">
+                    <string>ID:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QSpinBox" name="spinBox">
+                   <property name="minimum">
+                    <number>1</number>
+                   </property>
+                   <property name="maximum">
+                    <number>240</number>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QGroupBox" name="groupBox_2">
+              <property name="title">
+               <string>Modbus Registers</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="logs">
+       <layout class="QGridLayout" name="gridLayout_2">
+        <item row="0" column="0">
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <item>
+           <widget class="QLabel" name="label_2">
+            <property name="text">
+             <string>From:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QDateTimeEdit" name="dtPeriodSince">
+            <property name="inputMethodHints">
+             <set>Qt::ImhDate|Qt::ImhTime</set>
+            </property>
+            <property name="displayFormat">
+             <string>MM/dd/yyyy hh:mm</string>
+            </property>
+            <property name="calendarPopup">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_3">
+            <property name="text">
+             <string>to:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QDateTimeEdit" name="dtPeriodUntil">
+            <property name="inputMethodHints">
+             <set>Qt::ImhDate|Qt::ImhTime</set>
+            </property>
+            <property name="displayFormat">
+             <string>MM/dd/yyyy hh:mm</string>
+            </property>
+            <property name="calendarPopup">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_2">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pbSearch">
+            <property name="text">
+             <string>Search</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="1" column="0">
+         <widget class="QTreeWidget" name="treeWidgetLogs">
+          <column>
+           <property name="text">
+            <string>Date/Time</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Liters</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Vehicle</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+    <item row="0" column="0">
+     <widget class="QLabel" name="labelMB">
+      <property name="font">
+       <font>
+        <family>Roboto Slab</family>
+        <pointsize>30</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>Mobile Meter</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuMenu">
+    <property name="title">
+     <string>Menu</string>
+    </property>
+    <addaction name="actionDashboard"/>
+    <addaction name="actionSettings"/>
+    <addaction name="actionLogs"/>
+   </widget>
+   <widget class="QMenu" name="menuAbout">
+    <property name="title">
+     <string>About</string>
+    </property>
+    <addaction name="actionSystem"/>
+   </widget>
+   <addaction name="menuMenu"/>
+   <addaction name="menuAbout"/>
+  </widget>
+  <action name="actionSettings">
+   <property name="text">
+    <string>Settings</string>
+   </property>
+  </action>
+  <action name="actionSystem">
+   <property name="text">
+    <string>System</string>
+   </property>
+  </action>
+  <action name="actionLogs">
+   <property name="text">
+    <string>Logs</string>
+   </property>
+  </action>
+  <action name="actionDashboard">
+   <property name="text">
+    <string>Dashboard</string>
+   </property>
+  </action>
+ </widget>
+ <tabstops>
+  <tabstop>pbSearch</tabstop>
+  <tabstop>dtPeriodSince</tabstop>
+  <tabstop>dtPeriodUntil</tabstop>
+  <tabstop>treeWidgetLogs</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>

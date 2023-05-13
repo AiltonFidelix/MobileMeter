@@ -1,5 +1,7 @@
 QT += core gui
 
+QT += serialport
+
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 CONFIG += c++17
@@ -14,18 +16,18 @@ UI_DIR += .ui/
 
 SOURCES += \
     src/main.cpp \
-    src/mmlineedit.cpp \
-    src/mmlogin.cpp \
-    src/mobilemeter.cpp
+    src/mblogin.cpp \
+    src/mbmain.cpp \
+    src/mbmodbus.cpp
 
 HEADERS += \
-    src/mmlineedit.h \
-    src/mmlogin.h \
-    src/mobilemeter.h
+    src/mblogin.h \
+    src/mbmain.h \
+    src/mbmodbus.h
 
 FORMS += \
-    ui/mmlogin.ui \
-    ui/mobilemeter.ui
+    ui/mblogin.ui \
+    ui/mbmain.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
