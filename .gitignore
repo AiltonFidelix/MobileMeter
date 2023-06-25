@@ -5,6 +5,8 @@
 .obj
 .ui
 
+*.db
+
 Makefile
 MobileMeter
 MobileMeter.pro.*

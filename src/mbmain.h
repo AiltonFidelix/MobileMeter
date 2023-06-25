@@ -3,6 +3,8 @@
 
 #include <QMainWindow>
 
+#include "mbserialdialog.h"
+
 QT_BEGIN_NAMESPACE
 namespace Ui { class MBMain; }
 QT_END_NAMESPACE
@@ -15,10 +17,11 @@ public:
     ~MBMain();
 
 private slots:
-    void searchLogs();
+    void logsList();
 
 private:
     Ui::MBMain *ui;
+    MBSerialDialog m_serialDialog;
 
     enum Screens { Dashboard, Settings, logs };
 };

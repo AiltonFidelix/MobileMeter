@@ -14,7 +14,7 @@
    <string>Mobile Meter Login</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: #00BCFF;</string>
+   <string notr="true">background-color: #B3E5FF;</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="2" column="1">

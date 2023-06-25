@@ -18,10 +18,24 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <widget class="QLabel" name="labelMB">
+      <property name="font">
+       <font>
+        <family>Roboto Slab</family>
+        <pointsize>30</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>Mobile Meter</string>
+      </property>
+     </widget>
+    </item>
     <item row="1" column="0">
      <widget class="QStackedWidget" name="stackedWidget">
       <property name="currentIndex">
-       <number>2</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="dashboard">
        <layout class="QGridLayout" name="gridLayout_3">
@@ -102,6 +116,9 @@
               <property name="text">
                <string>Fuel</string>
               </property>
+              <property name="icon">
+               <iconset theme="emblem-default"/>
+              </property>
              </widget>
             </item>
             <item>
@@ -128,9 +145,17 @@
         <item row="1" column="0">
          <widget class="QToolBox" name="tbSettings">
           <property name="currentIndex">
-           <number>2</number>
+           <number>1</number>
           </property>
           <widget class="QWidget" name="page">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>764</width>
+             <height>252</height>
+            </rect>
+           </property>
            <attribute name="label">
             <string>Device</string>
            </attribute>
@@ -148,8 +173,21 @@
             <string>Communication</string>
            </attribute>
            <layout class="QGridLayout" name="gridLayout_5">
+            <item row="0" column="2">
+             <spacer name="horizontalSpacer_4">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
             <item row="0" column="1">
-             <widget class="QComboBox" name="comboBox">
+             <widget class="QComboBox" name="cbCommunicationType">
               <item>
                <property name="text">
                 <string>Serial</string>
@@ -167,17 +205,112 @@
               </item>
              </widget>
             </item>
+            <item row="1" column="0" colspan="3">
+             <widget class="QStackedWidget" name="stCommunication">
+              <property name="currentIndex">
+               <number>0</number>
+              </property>
+              <widget class="QWidget" name="pageSerial">
+               <layout class="QGridLayout" name="gridLayout_9">
+                <item row="0" column="0">
+                 <widget class="QGroupBox" name="groupBox_3">
+                  <property name="title">
+                   <string>Communication Serial</string>
+                  </property>
+                  <layout class="QGridLayout" name="gridLayout_8">
+                   <item row="0" column="0">
+                    <layout class="QHBoxLayout" name="horizontalLayout_7">
+                     <item>
+                      <widget class="QLabel" name="label_9">
+                       <property name="text">
+                        <string>Port:</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLineEdit" name="lineEdit_2"/>
+                     </item>
+                     <item>
+                      <spacer name="horizontalSpacer_3">
+                       <property name="orientation">
+                        <enum>Qt::Horizontal</enum>
+                       </property>
+                       <property name="sizeHint" stdset="0">
+                        <size>
+                         <width>40</width>
+                         <height>20</height>
+                        </size>
+                       </property>
+                      </spacer>
+                     </item>
+                     <item>
+                      <widget class="QPushButton" name="pbCommSerialConfig">
+                       <property name="text">
+                        <string>Serial Config</string>
+                       </property>
+                       <property name="icon">
+                        <iconset theme="emblem-system">
+                         <normaloff>.</normaloff>.</iconset>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </item>
+                   <item row="1" column="0">
+                    <spacer name="verticalSpacer_2">
+                     <property name="orientation">
+                      <enum>Qt::Vertical</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>20</width>
+                       <height>40</height>
+                      </size>
+                     </property>
+                    </spacer>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+              <widget class="QWidget" name="pageWiFi">
+               <widget class="QLabel" name="label">
+                <property name="geometry">
+                 <rect>
+                  <x>130</x>
+                  <y>70</y>
+                  <width>62</width>
+                  <height>16</height>
+                 </rect>
+                </property>
+                <property name="text">
+                 <string>WiFi</string>
+                </property>
+               </widget>
+              </widget>
+              <widget class="QWidget" name="pageEthernet">
+               <widget class="QLabel" name="label_7">
+                <property name="geometry">
+                 <rect>
+                  <x>170</x>
+                  <y>90</y>
+                  <width>62</width>
+                  <height>16</height>
+                 </rect>
+                </property>
+                <property name="text">
+                 <string>Ethernet</string>
+                </property>
+               </widget>
+              </widget>
+             </widget>
+            </item>
             <item row="0" column="0">
              <widget class="QLabel" name="label_5">
               <property name="text">
                <string>Use:</string>
               </property>
-             </widget>
-            </item>
-            <item row="1" column="0" colspan="3">
-             <widget class="QStackedWidget" name="stackedWidget_2">
-              <widget class="QWidget" name="page_2"/>
-              <widget class="QWidget" name="page_3"/>
              </widget>
             </item>
            </layout>
@@ -214,30 +347,9 @@
                   <widget class="QLineEdit" name="lineEdit"/>
                  </item>
                  <item>
-                  <widget class="QLabel" name="label_7">
-                   <property name="text">
-                    <string>Baudrate:</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QComboBox" name="comboBox_2">
-                   <item>
-                    <property name="text">
-                     <string>9600</string>
-                    </property>
-                   </item>
-                   <item>
-                    <property name="text">
-                     <string>115200</string>
-                    </property>
-                   </item>
-                  </widget>
-                 </item>
-                 <item>
                   <widget class="QLabel" name="label_6">
                    <property name="text">
-                    <string>ID:</string>
+                    <string>Address</string>
                    </property>
                   </widget>
                  </item>
@@ -248,6 +360,29 @@
                    </property>
                    <property name="maximum">
                     <number>240</number>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <spacer name="horizontalSpacer">
+                   <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>40</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="pbModbusSerialConfig">
+                   <property name="text">
+                    <string>Serial Config</string>
+                   </property>
+                   <property name="icon">
+                    <iconset theme="emblem-system"/>
                    </property>
                   </widget>
                  </item>
@@ -331,6 +466,9 @@
             <property name="text">
              <string>Search</string>
             </property>
+            <property name="icon">
+             <iconset theme="edit-find"/>
+            </property>
            </widget>
           </item>
          </layout>
@@ -358,20 +496,6 @@
       </widget>
      </widget>
     </item>
-    <item row="0" column="0">
-     <widget class="QLabel" name="labelMB">
-      <property name="font">
-       <font>
-        <family>Roboto Slab</family>
-        <pointsize>30</pointsize>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="text">
-       <string>Mobile Meter</string>
-      </property>
-     </widget>
-    </item>
    </layout>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
@@ -384,41 +508,28 @@
      <height>21</height>
     </rect>
    </property>
-   <widget class="QMenu" name="menuMenu">
-    <property name="title">
-     <string>Menu</string>
-    </property>
-    <addaction name="actionDashboard"/>
-    <addaction name="actionSettings"/>
-    <addaction name="actionLogs"/>
-   </widget>
-   <widget class="QMenu" name="menuAbout">
-    <property name="title">
-     <string>About</string>
-    </property>
-    <addaction name="actionSystem"/>
-   </widget>
-   <addaction name="menuMenu"/>
-   <addaction name="menuAbout"/>
   </widget>
+  <action name="actionDashboard">
+   <property name="text">
+    <string>Dashboard</string>
+   </property>
+  </action>
   <action name="actionSettings">
    <property name="text">
     <string>Settings</string>
    </property>
   </action>
-  <action name="actionSystem">
-   <property name="text">
-    <string>System</string>
-   </property>
-  </action>
   <action name="actionLogs">
+   <property name="icon">
+    <iconset theme="audio-card"/>
+   </property>
    <property name="text">
     <string>Logs</string>
    </property>
   </action>
-  <action name="actionDashboard">
+  <action name="actionAbout">
    <property name="text">
-    <string>Dashboard</string>
+    <string>About</string>
    </property>
   </action>
  </widget>

@@ -1,5 +1,6 @@
 #include "mbmain.h"
 #include "mblogin.h"
+#include "mbdatabase.h"
 
 #include <QApplication>
 
@@ -14,20 +15,23 @@ int main(int argc, char *argv[])
 
     QApplication a(argc, argv);
 
+    MBDataBase::instance()->connect();
+
     MBMain meter;
 
     MBLogin login;
 
 #ifdef TEST
-//    login.show();
+    login.show();
 
-//    QObject::connect(&login, &MBLogin::accepted, &meter, &MBMain::show);
-    meter.show();
+    QObject::connect(&login, &MBLogin::accepted, &meter, &MBMain::show);
 #else
     login.showFullScreen();
 
     QObject::connect(&login, &MBLogin::accepted, &meter, &MBMain::showFullScreen);
 #endif
+
+    MBDataBase::instance()->disconnect();
 
     return a.exec();
 }
