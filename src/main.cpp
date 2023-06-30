@@ -31,8 +31,6 @@ int main(int argc, char *argv[])
     QObject::connect(&login, &MBLogin::accepted, &meter, &MBMain::showFullScreen);
 #endif
 
-    MBDataBase::instance()->disconnect();
-
     return a.exec();
 }
 

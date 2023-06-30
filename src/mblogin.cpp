@@ -25,8 +25,8 @@ MBLogin::login()
     QString user = ui->leUsername->text();
     QString pass = ui->lePassword->text();
 
-    if(user == "admin" && pass == "admin")
+    if(MBDataBase::instance()->authenticate(user, pass))
         accept();
     else
-        QMessageBox::warning(this, "Login Failed", "Username or Password wrong!");
+        QMessageBox::warning(this, "Login Failed", MBDataBase::instance()->errors().join(""));
 }
